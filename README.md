@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # E-Learn Pro - Advanced Learning Management System
 
 E-Learn Pro is a modern, comprehensive e-learning platform built with React.js. It features a robust multi-role system catering to Students, Instructors, and Administrators, providing a seamless educational experience.
@@ -79,3 +80,6 @@ src/
 └── main.jsx        # Entry point
 ```
 
+=======
+# E-learning-frontend
+>>>>>>> 8e6165192358a3902538833b8aad6f32ca81eaa3
