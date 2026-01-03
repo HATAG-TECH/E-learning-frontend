@@ -1,0 +1,387 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Theme Variables */
+:root {
+  --bs-font-sans-serif: 'Inter', sans-serif;
+  --bs-body-font-family: 'Inter', sans-serif;
+}
+
+/* Light Theme Variables */
+[data-bs-theme="light"] {
+  --lumina-bg: #FFFFFF;
+  --lumina-surface: #F8F9FA;
+  --lumina-surface-hover: #E9ECEF;
+  --lumina-primary: #3B82F6;
+  --lumina-primary-dark: #2563EB;
+  --lumina-accent: #06B6D4;
+  --lumina-text: #212529;
+  --lumina-text-muted: #6C757D;
+  --lumina-border: #DEE2E6;
+}
+
+/* Dark Theme Variables (Lumina) */
+[data-bs-theme="dark"] {
+  --lumina-bg: #0B1120;
+  --lumina-surface: #1E293B;
+  --lumina-surface-hover: #334155;
+  --lumina-primary: #3B82F6;
+  --lumina-primary-dark: #2563EB;
+  --lumina-accent: #06B6D4;
+  --lumina-text: #F8FAFC;
+  --lumina-text-muted: #94A3B8;
+  --lumina-border: #334155;
+}
+
+/* Global Theme Overrides for Utility Classes */
+[data-bs-theme="dark"] .text-muted,
+[data-bs-theme="dark"] .text-secondary {
+  color: var(--lumina-text-muted) !important;
+}
+
+[data-bs-theme="dark"] .bg-light,
+[data-bs-theme="dark"] .bg-white {
+  background-color: var(--lumina-surface) !important;
+  color: var(--lumina-text) !important;
+}
+
+[data-bs-theme="dark"] .border {
+  border-color: var(--lumina-border) !important;
+}
+
+[data-bs-theme="dark"] .list-group-item-action:hover {
+  background-color: var(--lumina-surface-hover) !important;
+  color: var(--lumina-text) !important;
+}
+
+body {
+  background-color: var(--lumina-bg) !important;
+  color: var(--lumina-text) !important;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth Theme Transition for Common Elements */
+.card,
+.navbar,
+.modal-content,
+.form-control,
+.btn,
+.list-group-item,
+.stats-box {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Navbar Overrides */
+[data-bs-theme="dark"] .navbar {
+  background-color: rgba(11, 17, 32, 0.85) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--lumina-border);
+}
+
+[data-bs-theme="light"] .navbar {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--lumina-border);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--lumina-text) !important;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: var(--lumina-text-muted) !important;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--lumina-text) !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--lumina-primary), var(--lumina-primary-dark));
+  border: none;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: 9999px;
+  /* pill */
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: white !important;
+  /* Ensure readable text on primary buttons */
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.6);
+  background: linear-gradient(135deg, var(--lumina-primary-dark), var(--lumina-primary));
+}
+
+.btn-outline-primary {
+  color: var(--lumina-primary);
+  border-color: var(--lumina-primary);
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--lumina-primary);
+  color: white;
+}
+
+/* Cards */
+.card {
+  background-color: var(--lumina-surface);
+  border: 1px solid var(--lumina-border);
+  border-radius: 1rem;
+  color: var(--lumina-text);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Custom Text Utilities */
+.text-lumina-muted {
+  color: var(--lumina-text-muted) !important;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #60A5FA, #22D3EE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Sections */
+.section-header-badge {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* Stats Box */
+.stats-box {
+  background: var(--lumina-surface);
+  border: 1px solid var(--lumina-border);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.stats-box:hover {
+  transform: translateY(-5px);
+  border-color: var(--lumina-primary);
+}
+
+/* Feature Icon */
+.feature-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--lumina-primary);
+  font-size: 1.5rem;
+}
+
+/* Newsletter */
+.newsletter-card {
+  background: var(--lumina-surface);
+  border: 1px solid var(--lumina-border);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-input {
+  background: var(--lumina-bg);
+  border: 1px solid var(--lumina-border);
+  color: var(--lumina-text);
+  padding: 0.8rem 1.2rem;
+  border-radius: 9999px 0 0 9999px;
+
+}
+
+.newsletter-input:focus {
+  background: var(--lumina-bg);
+  border-color: var(--lumina-primary);
+  color: var(--lumina-text);
+  box-shadow: none;
+}
+
+/* Footer */
+footer.bg-body-tertiary {
+  background-color: var(--lumina-bg) !important;
+  border-top: 1px solid var(--lumina-border) !important;
+}
+
+/* Bootstrap overrides for form controls */
+.form-control,
+.form-select {
+  background-color: var(--lumina-surface);
+  border-color: var(--lumina-border);
+  color: var(--lumina-text);
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--lumina-surface);
+  border-color: var(--lumina-primary);
+  color: var(--lumina-text);
+  box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25);
+}
+
+.list-group-item {
+  background-color: var(--lumina-surface);
+  border-color: var(--lumina-border);
+  color: var(--lumina-text);
+}
+
+.modal-content {
+  background-color: var(--lumina-bg);
+  border: 1px solid var(--lumina-border);
+  color: var(--lumina-text);
+}
+
+.modal-header,
+.modal-footer {
+  border-color: var(--lumina-border);
+}
+
+/* Dark mode specific close button inversion */
+[data-bs-theme="dark"] .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.profile-dropdown .dropdown-toggle::after {
+  display: none !important;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.reveal-scale-up {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Dropdown Styling */
+.dropdown-menu {
+  background-color: var(--lumina-bg);
+  border: 1px solid var(--lumina-border);
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.dropdown-item {
+  color: var(--lumina-text);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: var(--lumina-surface-hover);
+  color: var(--lumina-primary);
+  transform: translateX(4px);
+}
+
+.dropdown-item.text-danger:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545 !important;
+}
+
+.dropdown-divider {
+  border-top: 1px solid var(--lumina-border);
+}
+
+/* Stagger Delays */
+.delay-100 {
+  transition-delay: 100ms;
+}
+
+.delay-200 {
+  transition-delay: 200ms;
+}
+
+.delay-300 {
+  transition-delay: 300ms;
+}
+
+.delay-400 {
+  transition-delay: 400ms;
+}
+
+.delay-500 {
+  transition-delay: 500ms;
+}
